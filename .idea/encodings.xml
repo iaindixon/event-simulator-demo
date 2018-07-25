@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dataset-simulator" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/simulator-http" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/simulator-mqtt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/value-consumer-influxdb" charset="UTF-8" />
+  </component>
+</project>

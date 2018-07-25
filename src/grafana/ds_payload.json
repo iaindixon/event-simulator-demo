@@ -1,8 +1,0 @@
-{
-  "name": "hono_payload",
-  "type": "influxdb",
-  "database": "payload",
-  "url": "http://influxdb.hono:8086",
-  "access": "proxy",
-  "basicAuth": false
-}
