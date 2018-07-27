@@ -296,6 +296,7 @@ public class Application {
             // map MQTT client
 
             context.connectData(mqttClient.port("client"), mqttPublish.port("client"));
+            context.connectData(mqttClient.port("client"), telemetryPublish.port("client"));
 
             // when the CSV record is updated --> publish to MQTT if the client is connected
 
