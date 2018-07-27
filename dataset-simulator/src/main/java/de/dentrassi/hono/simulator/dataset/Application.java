@@ -286,6 +286,8 @@ public class Application {
                     .createComponent("de.dentrassi.flow.component.mqtt.MqttPublish", map(map -> {
                         map.put("topic", "event");
                         map.put("qos", "1");
+                        map.put("topic", "telemetry");
+                        map.put("qos", "0");
                     }));
 
             // map MQTT client
