@@ -286,10 +286,13 @@ public class Application {
                     .createComponent("de.dentrassi.flow.component.mqtt.MqttPublish", map(map -> {
                         map.put("topic", "event");
                         map.put("qos", "1");
+                    }));
+
+            final ComponentInstance telemetryPublish = context
+                    .createComponent("de.dentrassi.flow.component.mqtt.MqttPublish", map(map -> {
                         map.put("topic", "telemetry");
                         map.put("qos", "0");
                     }));
-
             // map MQTT client
 
             context.connectData(mqttClient.port("client"), mqttPublish.port("client"));
@@ -303,6 +306,7 @@ public class Application {
 
             context.connectTrigger(csv.port("updated"), permit.port("input"));
             context.connectTrigger(permit.port("output"), mqttPublish.port("publish"));
+            context.connectTrigger(permit.port("output"), telemetryPublish.port("publish"));
 
             // mqttClient]connected >-- permit[permit
 
@@ -310,6 +314,7 @@ public class Application {
 
             // publish JSON payload
             context.connectData(toJson.port("output"), mqttPublish.port("payload"));
+            context.connectData(toJson.port("output"), telemetryPublish.port("payload"));
 
         }
     }
